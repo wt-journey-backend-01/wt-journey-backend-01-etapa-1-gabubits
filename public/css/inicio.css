@@ -55,7 +55,7 @@ a button:hover {
   background-color: #0051c7;
 }
 
-div {
+div.lanche {
   background: white;
   margin: 20px auto;
   padding: 20px;
