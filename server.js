@@ -36,6 +36,7 @@ app.get("/contato", (req, res) => {
 // essa foi a melhor alternativa que encontrei.
 app.post("/contato-recebido", (req, res) => {
   const { nome, email, assunto, mensagem } = req.body;
+  res.set("Content-Type", "text/html");
   res.status(200).send(`
     <!DOCTYPE html>
     <html lang="pt-BR">
