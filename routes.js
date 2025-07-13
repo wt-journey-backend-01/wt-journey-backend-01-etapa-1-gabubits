@@ -16,13 +16,13 @@ router.use(express.static(path.join(__dirname, "public")));
 // Rota de entrada (página inicial) da aplicação.
 // Essa rota renderiza as opções do cardápio e o formulário de sugestão.
 router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "inicio.html"));
+  res.status(200).sendFile(path.join(__dirname, "views", "inicio.html"));
 });
 
 // Rota de contato
 // Essa rota renderiza um formulário com nome, email, assunto e mensagem.
 router.get("/contato", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "contato.html"));
+  res.status(200).sendFile(path.join(__dirname, "views", "contato.html"));
 });
 
 // Rota para onde o usuário será redirecionado após enviar o formulário
@@ -32,7 +32,7 @@ router.get("/contato", (req, res) => {
 // essa foi a melhor alternativa que encontrei.
 router.post("/contato-recebido", (req, res) => {
   const { nome, email, assunto, mensagem } = req.body;
-  res.send(`
+  res.status(200).send(`
     <!DOCTYPE html>
     <html lang="pt-BR">
     <head>
@@ -58,14 +58,16 @@ router.post("/contato-recebido", (req, res) => {
 
 // Rota de API para lanches. Essa rota renderiza um arquivo JSON.
 router.get("/api/lanches", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "data", "lanches.json"));
+  res
+    .status(200)
+    .sendFile(path.join(__dirname, "public", "data", "lanches.json"));
 });
 
 // Rota para que renderiza o agradecimento da sugestão.
 router.get("/sugestao", (req, res) => {
   const { nome, ingredientes } = req.query;
 
-  res.send(`
+  res.status(200).send(`
     <!DOCTYPE html>
     <html lang="pt-BR">
     <head>
