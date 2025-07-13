@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevBurguer</title>
+    <link rel="stylesheet" type="text/css" href="/css/inicio.css" />
+  </head>
+  <body>
+    <h1 class="mainTitle">Bem-vinde ao DevBurguer</h1>
+    <a href="/contato"><button>Ir para a página de contato</button></a>
+    <a href="/api/lanches"><button>Verificar a API de lanches</button></a>
+    <h2>Confira o nosso cardápio recheado de delícias:</h2>
+    <div>
+      <h3>DevBurguer Clássico</h3>
+      <p>
+        Ingredientes: Pão brioche, Carne 150g, Queijo cheddar, Alface americana,
+        Tomate fresco, Molho especial
+      </p>
+    </div>
+    <div>
+      <h3>Burguer de Bacon</h3>
+      <p>
+        Ingredientes: Pão australiano, Carne 180g, Queijo prato, Bacon crocante,
+        Cebola caramelizada, Molho barbecue
+      </p>
+    </div>
+    <div>
+      <h3>Burguer de Bacon</h3>
+      <p>
+        Ingredientes: Pão integral, Burger de grão de bico, Queijo vegano,
+        Rúcula, Tomate seco, Maionese de ervas
+      </p>
+    </div>
+
+    <h2>Tem alguma sugestão? Estamos abertos a te ouvir!</h2>
+    <form action="/sugestao" method="get">
+      <label for="nome">Nome:</label>
+      <input
+        id="nome"
+        name="nome"
+        placeholder="Digite o nome da sua delícia"
+        required
+      />
+      <label for="ingredientes">Ingredientes:</label>
+      <textarea
+        placeholder="Digite aqui os ingredintes"
+        id="ingredientes"
+        name="ingredientes"
+        rows="5"
+        cols="33"
+        required
+      ></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>

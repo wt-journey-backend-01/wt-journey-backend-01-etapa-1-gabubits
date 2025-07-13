@@ -2,9 +2,9 @@
   "name": "wt-journey-backend-01-etapa-1-gabubits",
   "version": "1.0.0",
   "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/fO8pjV07)",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "node --watch server.js"
   },
   "repository": {
     "type": "git",
@@ -13,19 +13,15 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/wt-journey-backend-01/wt-journey-backend-01-etapa-1-gabubits/issues"
   },
   "homepage": "https://github.com/wt-journey-backend-01/wt-journey-backend-01-etapa-1-gabubits#readme",
   "dependencies": {
-    "express": "^5.1.0",
-    "nodemon": "^3.1.10",
-    "ts-node": "^10.9.2"
+    "express": "^5.1.0"
   },
   "devDependencies": {
-    "@types/express": "^5.0.3",
-    "@types/node": "^24.0.13",
-    "typescript": "^5.8.3"
+    "nodemon": "^3.1.10"
   }
 }
