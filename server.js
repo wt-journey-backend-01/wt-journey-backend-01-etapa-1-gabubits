@@ -26,7 +26,33 @@ app.get("/", (req, res) => {
 // Rota de contato
 // Essa rota renderiza um formulário com nome, email, assunto e mensagem.
 app.get("/contato", (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, "views", "contato.html"));
+  res.status(200).send(`
+    <!DOCTYPE html>
+    <html lang="pt-br">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Entre em contato!</title>
+        <link rel="stylesheet" type="text/css" href="/css/contato.css" />
+      </head>
+      <body>
+        <a href="/"><button>Voltar à pagina inicial</button></a>
+        <h1>Entre em contato conosco!</h1>
+        <form action="/contato-recebido" method="post">
+          <label for="nome">Nome</label>
+          <input type="text" name="nome" id="nome" required />
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email" required />
+          <label for="assunto">Assunto</label>
+          <input type="text" name="assunto" id="assunto" required />
+          <label for="mensagem">Mensagem</label>
+          <input type="text" name="mensagem" id="mensagem" required />
+          <button type="submit">Enviar</button>
+        </form>
+      </body>
+    </html> 
+
+    `);
 });
 
 // Rota para onde o usuário será redirecionado após enviar o formulário
