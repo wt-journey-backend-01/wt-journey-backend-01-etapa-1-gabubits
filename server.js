@@ -38,7 +38,7 @@ app.get("/contato", (req, res) => {
       <body>
         <a href="/"><button>Voltar à pagina inicial</button></a>
         <h1>Entre em contato conosco!</h1>
-        <form action="/contato-recebido" method="post">
+        <form action="/contato" method="post">
           <label for="nome">Nome</label>
           <input type="text" name="nome" id="nome" required />
           <label for="email">E-mail</label>
@@ -60,7 +60,7 @@ app.get("/contato", (req, res) => {
 // no enunciado do desafio.
 // Como não é possível, por enquanto, usar algo dinâmico com o HTML, então
 // essa foi a melhor alternativa que encontrei.
-app.post("/contato-recebido", (req, res) => {
+app.post("/contato", (req, res) => {
   const { nome, email, assunto, mensagem } = req.body;
   res.set("Content-Type", "text/html");
   res.status(200).send(`
